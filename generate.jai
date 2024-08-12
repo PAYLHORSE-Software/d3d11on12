@@ -51,7 +51,7 @@ generate_bindings :: (args: [] string) -> bool {
         visitor = d3d11on12_visitor;
     }
 
-    return generate_bindings(opts, "d3d11on12_bindings.jai");
+    return generate_bindings(opts, "raw_bindings.jai");
 }
 
 d3d11on12_visitor :: (decl: *Declaration, parent_decl: *Declaration) -> Declaration_Visit_Result {
@@ -82,11 +82,9 @@ HEADER :: #string DONE
 //  --------------------
 // | D3D11ON12 BINDINGS |
 //  --------------------
+
+// NOTE: if you're updating this module, copy over to module.jai and use d3d11 namespace similarly
 DONE
 
 FOOTER :: #string DONE
-#import "Windows";
-#import "d3d11";
-#import "d3d12";
-// #import "dxgi";
 DONE

@@ -7,6 +7,8 @@
 // | D3D11ON12 BINDINGS |
 //  --------------------
 
+// NOTE: if you're updating this module, copy over to module.jai and use d3d11 namespace similarly
+
 
 
 PFN_D3D11ON12_CREATE_DEVICE :: #type (unknown0: *IUnknown, unknown1: u32, unknown2: *D3D_FEATURE_LEVEL, FeatureLevels: u32, unknown3: **IUnknown, NumQueues: u32, unknown4: u32, unknown5: **ID3D11Device, unknown6: **ID3D11DeviceContext, unknown7: *D3D_FEATURE_LEVEL) -> HRESULT #c_call;
@@ -104,7 +106,3 @@ d3d11on12 :: #library,system "d3d11on12";
     assert(size_of(ID3D11On12Device2) == 8, "ID3D11On12Device2 has size % instead of 8", size_of(ID3D11On12Device2));
 }
 
-#import "Windows";
-#import "d3d11";
-#import "d3d12";
-// #import "dxgi";
