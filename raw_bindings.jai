@@ -13,6 +13,8 @@
 
 PFN_D3D11ON12_CREATE_DEVICE :: #type (unknown0: *IUnknown, unknown1: u32, unknown2: *D3D_FEATURE_LEVEL, FeatureLevels: u32, unknown3: **IUnknown, NumQueues: u32, unknown4: u32, unknown5: **ID3D11Device, unknown6: **ID3D11DeviceContext, unknown7: *D3D_FEATURE_LEVEL) -> HRESULT #c_call;
 
+D3D11On12CreateDevice :: (pDevice: *IUnknown, Flags: u32, pFeatureLevels: *D3D_FEATURE_LEVEL, FeatureLevels: u32, ppCommandQueues: **IUnknown, NumQueues: u32, NodeMask: u32, ppDevice: **ID3D11Device, ppImmediateContext: **ID3D11DeviceContext, pChosenFeatureLevel: *D3D_FEATURE_LEVEL) -> HRESULT #foreign d3d11;
+
 D3D11_RESOURCE_FLAGS :: struct {
     BindFlags:           u32;
     MiscFlags:           u32;
@@ -83,7 +85,7 @@ vtable :: (obj: *ID3D11On12Device2) -> *ID3D11On12Device2_VTable { return obj.id
 
 #import "Basic"; // For assert
 
-d3d11on12 :: #library,system "d3d11on12";
+d3d11 :: #library,system "d3d11";
 
 #run {
     {

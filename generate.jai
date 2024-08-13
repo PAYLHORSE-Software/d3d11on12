@@ -35,7 +35,7 @@ generate_bindings :: (args: [] string) -> bool {
     {
         using opts;
 
-	array_add(*libnames, "d3d11on12.dll");
+	array_add(*libnames, "d3d11.dll");
 
 	array_add(*source_files, "d3d11on12.h");
 
